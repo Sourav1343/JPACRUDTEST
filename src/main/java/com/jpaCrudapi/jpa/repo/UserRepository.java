@@ -1,4 +1,4 @@
-package com.jpaCrudapi.jpa;
+package com.jpaCrudapi.jpa.repo;
 
 import com.jpaCrudapi.jpa.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

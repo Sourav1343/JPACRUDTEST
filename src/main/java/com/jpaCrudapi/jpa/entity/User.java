@@ -12,13 +12,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    User(){
+    public User(){
         super();
     }
     public User(int id, String name) {
         this.id = id;
         this.name = name;
     }
+
+
 
     public void setId(int id) {
         this.id = id;
