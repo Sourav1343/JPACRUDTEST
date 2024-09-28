@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @SpringBootApplication
@@ -35,6 +36,17 @@ public class JpaApplication {
 		log.info("Set repo object");
 		List<User> Users =List.of(user1,user2);
 		userRepository.saveAll(Users);
+
+		Optional<User> optionalUser = userRepository.findById(1);
+
+		User user = optionalUser.get();
+
+	 user.setCity("NUH");
+	 userRepository.save(user);
+
+		log.info(String.valueOf(User.class),user);
+
+		System.out.println(user);
 
 
 	}
