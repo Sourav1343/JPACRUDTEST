@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.List;
+
 @Slf4j
 @SpringBootApplication
 public class JpaApplication {
@@ -19,11 +21,22 @@ public class JpaApplication {
 
 		UserRepository userRepository = context.getBean(UserRepository.class);
 		log.info("Create User object");
-		User user = new User();
+		User user1 = new User();
 		log.info("Set User object");
-		user.setName("Sourav");
+		user1.setName("Sourav");
+		user1.setCity("Nuh");
+		user1.setStatus("Live");
+
+		User user2 = new User();
+		log.info("Set User object");
+		user2.setName("Sourav");
+		user2.setCity("Nuh");
+		user2.setStatus("Live");
 		log.info("Set repo object");
-		User user1 = userRepository.save(user);
+		List<User> Users =List.of(user1,user2);
+		userRepository.saveAll(Users);
+
+
 	}
 
 }

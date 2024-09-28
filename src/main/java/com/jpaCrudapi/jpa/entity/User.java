@@ -12,29 +12,31 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    public User(){
-        super();
-    }
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
+    private String City;
+    private String Status;
 
-
-    public void setId(int id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public String getCity() {
+        return City;
     }
 
-    public String getName() {
-        return name;
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 }
